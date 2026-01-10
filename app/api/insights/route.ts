@@ -67,10 +67,10 @@ export async function GET(req: Request) {
 
     // SafeDep returns empty insight non-existing packages
     //
-    console.log(res.packageVersion);
+    // console.log(res.packageVersion);
     if (
       res.insight?.availableVersions &&
-      res.insight?.availableVersions?.length < 1
+      res.insight?.availableVersions?.length === 0
     ) {
       return NextResponse.json(
         { error: "Package version not found" },

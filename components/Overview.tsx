@@ -1,5 +1,5 @@
 import { FaGithub, FaGlobeAfrica } from "react-icons/fa";
-import { Award, BookText, Bug, Globe, Info } from "lucide-react";
+import { Award, BookText, Bug, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Card } from "./ui/card";
 
@@ -45,25 +45,25 @@ const Overview = ({
   return (
     <div className="p-4 space-y-4 bg-slate-50">
       <div className="flex flex-col gap-1">
-        <p className="flex items-center">
+        <p className="flex items-center font-semibold">
           <FaGithub className="mr-2" />
           {name}@{version}
         </p>
         <div>
           <span className="text-muted-foreground text-sm">Analysed at </span>
-          <span className="text-sm font-semibold">{AnalyzedAt()}</span>
+          <span className="text-sm">{AnalyzedAt()}</span>
         </div>
         <div>
           <span className="text-muted-foreground text-sm"> Source </span>
-          <span className="text-sm font-semibold">{source}</span>
+          <span className="text-sm">{source}</span>
         </div>
         <div>
           <span className="text-muted-foreground text-sm">SHA256 </span>
-          <span className="text-sm font-semibold">{sha}</span>
+          <span className="text-sm">{sha}</span>
         </div>
         <div>
           <span className="text-muted-foreground text-sm">Confidence </span>
-          <span className="text-sm font-semibold">{confidence}</span>
+          <span className="text-sm">{confidence}</span>
         </div>
       </div>
 

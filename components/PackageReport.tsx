@@ -22,7 +22,7 @@ const PackageReports = ({ insight, malysis }: PackageReportsProps) => {
         source={malysis.report.target.origin}
         confidence={
           malysis.report.target.confidence ??
-          "wdnweiqwkxmcjejqefjncscbwefifkwkefnqjfiqcqnwdou3p490rr4fhlwify982"
+          malysis.report.inference.confidence
         }
         sha={malysis.report.target.sha256}
         packageInfo={{

@@ -1,6 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Inference } from "@/types/malysis";
 
-export default function AnalysisSummary() {
+export default function AnalysisSummary({
+  inference,
+}: {
+  inference: Inference;
+}) {
   return (
     <div className="max-w-5xl mx-auto p-6 space-y-6">
       <Card className="border-l-4 border-teal-500">
@@ -16,9 +21,7 @@ export default function AnalysisSummary() {
             record
           </p>
           <p className="text-sm">
-            Multiple files flagged for potential data exfiltration, XSS, and RCE
-            vulnerabilities. High confidence of malicious intent due to combined
-            factors.
+            {inference?.summary || "No summary available"}
           </p>
         </CardContent>
       </Card>
@@ -40,14 +43,7 @@ export default function AnalysisSummary() {
             record
           </p>
           <p className="text-sm text-muted-foreground">
-            The package exhibits multiple concerning behaviors. Several files
-            match the sys_sec_recon_ext YARA rule, suggesting potential system
-            and network information exfiltration. Additionally, the code
-            constructs javascript URLs and assigns them to formAction
-            attributes, which can lead to XSS or RCE if user-controlled data is
-            involved. Furthermore, dynamic code execution is possible via
-            formatDynamicImportPath if the cacheHandlers configuration is
-            compromised. These factors, combined, indicate malicious intent.
+            {inference?.details || "No details available"}
           </p>
         </CardContent>
       </Card>

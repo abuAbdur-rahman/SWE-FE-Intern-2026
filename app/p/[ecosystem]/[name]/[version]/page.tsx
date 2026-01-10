@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { fetchInsight, fetchMalysis } from "@/actions/fetch";
 import { Suspense } from "react";
 import { Loader2 } from "lucide-react";
+import { RefreshButton } from "@/components/ui/RefreshButton";
 
 export const metadata: Metadata = {
   title: "Board",
@@ -21,7 +22,7 @@ const SafeDepPage = async ({ params }: SafeDepPageProps) => {
   const insightRes = await fetchInsight(ecosystem, name, version);
   const malysisRes = await fetchMalysis(ecosystem, name, version);
 
-  console.log(insightRes.error);
+  // console.log(insightRes.error);
 
   // 404 Page
   if (insightRes.error === "NOT_FOUND") {
@@ -76,6 +77,9 @@ const SafeDepPage = async ({ params }: SafeDepPageProps) => {
             This may be due to a temporary SafeDep service issue or an invalid
             package version. Please try again later.
           </p>
+          <div className="mt-4">
+            <RefreshButton />
+          </div>
         </div>
       </div>
     );

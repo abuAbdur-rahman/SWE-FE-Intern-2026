@@ -18,7 +18,7 @@ export const fetchInsight = async (
     },
   });
 
-  console.log(res.status);
+  // console.log(res.status);
 
   if (res.status === 404) {
     return { data: null, error: "NOT_FOUND" };
@@ -52,7 +52,7 @@ export const fetchMalysis = async (
     },
   });
 
-  console.log(res.status);
+  // console.log(res.status);
 
   if (res.status === 404) {
     return { data: null, error: "NOT_FOUND" };
